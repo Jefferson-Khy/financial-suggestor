@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function HealthSavingsContributions() {
+function HealthSavingsContributions({ financeStep, setFinanceStep }) {
+  const handleClick = () => {
+    setFinanceStep(financeStep + 1);
+  };
   return (
     <>
       <h1>
@@ -11,8 +13,8 @@ function HealthSavingsContributions() {
       <a href="https://www.irs.gov/publications/p969">
         HSA annual contribution limit here
       </a>
-      <button type="button">
-        <Link to="/RothIra">I've maxed my HSA contributions</Link>
+      <button type="button" onClick={handleClick}>
+        I've maxed my HSA contributions
       </button>
     </>
   );
