@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function PayoffDebt() {
+function PayoffDebt({ financeStep, setFinanceStep }) {
+  const handleClick = () => {
+    setFinanceStep(financeStep + 1);
+  };
   return (
     <>
       <h1>
@@ -10,10 +12,9 @@ function PayoffDebt() {
       <a href="https://www.calculators.org/loan/biweekly-vs-monthly.php">
         loan calulator
       </a>
-      <button type="button">
-        <Link to="/Retirement">
-          I've paid off short term high interest debt!!
-        </Link>
+      <button type="button" onClick={handleClick}>
+        I've paid off or paid significant amount of my short term high interest
+        debt!
       </button>
     </>
   );

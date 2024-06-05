@@ -5,7 +5,7 @@ function Savings({ financeStep, setFinanceStep, noSavings, setNoSavings }) {
     setFinanceStep(financeStep + 1);
   };
   const noHandleClick = () => {
-    setNoSavings(noSavings);
+    setNoSavings(true);
   };
   return (
     <>
