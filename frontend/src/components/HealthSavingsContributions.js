@@ -6,16 +6,20 @@ function HealthSavingsContributions({ financeStep, setFinanceStep }) {
   };
   return (
     <>
-      <h1>
-        you want to max out the annoual contribution here its relatively low
-        here is the annual contribution limit
-      </h1>
+      <div className="question-container">
+        <h1>
+          I suggest trying to max annual contribution to HSA. It's relatively
+          low. Annual contribution limit link below
+        </h1>
+      </div>
       <a href="https://www.irs.gov/publications/p969">
         HSA annual contribution limit here
       </a>
-      <button type="button" onClick={handleClick}>
-        I've maxed my HSA contributions
-      </button>
+      <div className="btn-container">
+        <button type="button" onClick={handleClick}>
+          I've maxed my HSA contributions
+        </button>
+      </div>
     </>
   );
 }

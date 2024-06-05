@@ -14,14 +14,18 @@ function HealthSavings({
   };
   return (
     <>
-      <h1>Do you have an HSA?</h1>
+      <div className="question-container">
+        <h1>Do you have an HSA?</h1>
+      </div>
       <p>include link on what HSA is maybe?</p>
-      <button type="button" onClick={yesHandleClick}>
-        Yes
-      </button>
-      <button type="button" onClick={noHandleClick}>
-        No
-      </button>
+      <div className="btn-container">
+        <button type="button" onClick={yesHandleClick}>
+          Yes
+        </button>
+        <button type="button" onClick={noHandleClick}>
+          No
+        </button>
+      </div>
     </>
   );
 }

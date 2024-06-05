@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EmploymentStatus from "./EmploymentStatus";
 import Savings from "./Savings";
 import NoSavings from "./NoSavings";
 import Debt from "./Debt";
@@ -18,76 +19,93 @@ function Home() {
   const [retirement, setRetirement] = useState(true);
   const [healthSavings, setHealthSavings] = useState(true);
 
-  const handleClick = () => {
-    setStep(step + 1);
-  };
-
   if (step == 1 && noSavings == false) {
     return (
-      <Savings
-        financeStep={step}
-        setFinanceStep={setStep}
-        noSavings={noSavings}
-        setNoSavings={setNoSavings}
-      />
+      <div className="card">
+        <Savings
+          financeStep={step}
+          setFinanceStep={setStep}
+          noSavings={noSavings}
+          setNoSavings={setNoSavings}
+        />
+      </div>
     );
   } else if (step == 1 && noSavings == true) {
-    return <NoSavings financeStep={step} setFinanceStep={setStep} />;
+    return (
+      <div className="card">
+        <NoSavings financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
   } else if (step == 2 && debt == false) {
     return (
-      <Debt
-        financeStep={step}
-        setFinanceStep={setStep}
-        debt={debt}
-        setDebt={setDebt}
-      />
+      <div className="card">
+        <Debt
+          financeStep={step}
+          setFinanceStep={setStep}
+          debt={debt}
+          setDebt={setDebt}
+        />
+      </div>
     );
   } else if (step == 2 && debt == true) {
-    return <PayOffDebt financeStep={step} setFinanceStep={setStep} />;
+    return (
+      <div className="card">
+        <PayOffDebt financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
   } else if (step == 3 && retirement == true) {
     return (
-      <Retirement
-        financeStep={step}
-        setFinanceStep={setStep}
-        retirement={retirement}
-        setRetirement={setRetirement}
-      />
+      <div className="card">
+        <Retirement
+          financeStep={step}
+          setFinanceStep={setStep}
+          retirement={retirement}
+          setRetirement={setRetirement}
+        />
+      </div>
     );
   } else if (step == 3 && retirement == false) {
     return (
-      <RetirementContributions financeStep={step} setFinanceStep={setStep} />
+      <div className="card">
+        <RetirementContributions financeStep={step} setFinanceStep={setStep} />
+      </div>
     );
   } else if (step == 4 && healthSavings == true) {
     return (
-      <HealthSavings
-        financeStep={step}
-        setFinanceStep={setStep}
-        healthSavings={healthSavings}
-        setHealthSavings={setHealthSavings}
-      />
+      <div className="card">
+        <HealthSavings
+          financeStep={step}
+          setFinanceStep={setStep}
+          healthSavings={healthSavings}
+          setHealthSavings={setHealthSavings}
+        />
+      </div>
     );
   } else if (step == 4 && healthSavings == false) {
     return (
-      <HealthSavingsContributions financeStep={step} setFinanceStep={setStep} />
+      <div className="card">
+        <HealthSavingsContributions
+          financeStep={step}
+          setFinanceStep={setStep}
+        />
+      </div>
     );
   } else if (step == 5) {
-    return <RothIra financeStep={step} setFinanceStep={setStep} />;
+    return (
+      <div className="card">
+        <RothIra financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
   } else if (step == 6) {
-    return <OptionalInvestments financeStep={step} setFinanceStep={setStep} />;
+    return (
+      <div className="card">
+        <OptionalInvestments financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
   }
   return (
     <div className="card">
-      <div className="question-container">
-        <h1>Are you Student or Career Professional?</h1>
-      </div>
-      <div className="btn-container">
-        <button id="student-btn" type="button" onClick={handleClick}>
-          <strong>Student</strong>
-        </button>
-        <button id="prof-btn" type="button" onClick={handleClick}>
-          <strong>Career Professional</strong>
-        </button>
-      </div>
+      <EmploymentStatus financeStep={step} setFinanceStep={setStep} />
     </div>
   );
 }

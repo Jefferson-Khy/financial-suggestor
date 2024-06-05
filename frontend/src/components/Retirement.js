@@ -15,13 +15,17 @@ function Retirement({
   };
   return (
     <>
-      <h1>Does your company offer 401k? pre-tax, after-tax, or Roth?</h1>
-      <button type="button" onClick={yesHandleClick}>
-        Yes
-      </button>
-      <button type="button" onClick={noHandleClick}>
-        No
-      </button>
+      <div className="question-container">
+        <h1>Does your company offer 401k? pre-tax, after-tax, or Roth?</h1>
+      </div>
+      <div className="btn-container">
+        <button type="button" onClick={yesHandleClick}>
+          Yes
+        </button>
+        <button type="button" onClick={noHandleClick}>
+          No
+        </button>
+      </div>
     </>
   );
 }
