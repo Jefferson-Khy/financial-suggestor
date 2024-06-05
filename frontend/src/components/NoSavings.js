@@ -1,12 +1,12 @@
 import React from "react";
 
-function NoSavings({ financeStep, setFinanceStep }) {
+function NoSavings({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("debt");
   };
 
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>Save up at least 6 months of exspenses before moving on</h1>
       </div>
@@ -16,7 +16,7 @@ function NoSavings({ financeStep, setFinanceStep }) {
           I've saved up enough for 6 months of expenses incase of an emergency!
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

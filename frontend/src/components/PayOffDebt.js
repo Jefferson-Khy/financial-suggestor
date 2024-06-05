@@ -1,11 +1,11 @@
 import React from "react";
 
-function PayoffDebt({ financeStep, setFinanceStep }) {
+function PayoffDebt({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("401k");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>
           You want to pay off short-term high interest debt before moving on
@@ -20,7 +20,7 @@ function PayoffDebt({ financeStep, setFinanceStep }) {
           interest debt!
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

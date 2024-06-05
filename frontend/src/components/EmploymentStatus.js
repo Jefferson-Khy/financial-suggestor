@@ -1,11 +1,11 @@
 import React from "react";
 
-function EmploymentStatus({ financeStep, setFinanceStep }) {
+function EmploymentStatus({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("savings");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>Are you Student or Career Professional?</h1>
       </div>
@@ -17,7 +17,7 @@ function EmploymentStatus({ financeStep, setFinanceStep }) {
           <strong>Career Professional</strong>
         </button>
       </div>
-    </>
+    </div>
   );
 }
 export default EmploymentStatus;

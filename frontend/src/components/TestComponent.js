@@ -1,158 +1,113 @@
 import React, { useState } from "react";
-import Prefrence from "./preference/Prefrence";
-import EditUser from "./preference/EditUser";
-import SignInAndSecurity from "./singIn & security/SignIn&Security";
-import EditEmail from "./singIn & security/EditEmail";
-import EditPassword from "./singIn & security/EditPassword";
-import CloseAccount from "./preference/CloseAccount";
-import Language from "./preference/Language";
-import Verifications from "./preference/Verifications";
+import EmploymentStatus from "./EmploymentStatus";
+import Savings from "./Savings";
+import NoSavings from "./NoSavings";
+import Debt from "./Debt";
+import PayOffDebt from "./PayOffDebt";
+import Retirement from "./Retirement";
+import RetirementContributions from "./RetirementContributions";
+import HealthSavings from "./HealthSavings";
+import HealthSavingsContributions from "./HealthSavingsContributions";
+import RothIra from "./RothIra";
+import OptionalInvestments from "./OptionalInvestments";
+import "../index.css";
 
-import PhoneNumbers from "./singIn & security/PhoneNumbers";
-import TwoStep from "./singIn & security/TwoStep";
+function Home() {
+  const [step, setStep] = useState(0);
+  const [noSavings, setNoSavings] = useState(false);
+  const [debt, setDebt] = useState(false);
+  const [retirement, setRetirement] = useState(true);
+  const [healthSavings, setHealthSavings] = useState(true);
 
-function MySettings(props) {
-  const userData = props.data;
-  const [selectedTab, setSelectedTab] = useState("Account Preference"); // State to keep track of which tab the user is on
-  const [selectedSetting, setSelectedSetting] = useState("Account Preference"); // State to manage displayed component
-
-  // Component we want to render
-  function renderSettings() {
-    switch (selectedSetting) {
-      // Account Preference tab
-      case "Account Preference":
-        return (
-          <Prefrence
-            userData={userData}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "EditUser":
-        return (
-          <EditUser
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "LanguageSetting":
-        return (
-          <Language
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "Verifications":
-        return (
-          <Verifications
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "CloseAccount":
-        return (
-          <CloseAccount
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-
-      // Sign In and security tab
-      case "SignIn & Security":
-        return (
-          <SignInAndSecurity
-            userData={userData}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "EditEmail":
-        return (
-          <EditEmail
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "EditPassword":
-        return (
-          <EditPassword
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "PhoneNumbers":
-        return (
-          <PhoneNumbers
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-      case "TwoStep":
-        return (
-          <TwoStep
-            userData={userData}
-            setChangesMade={props.setChangesMade}
-            setSelectedSetting={setSelectedSetting}
-          />
-        );
-
-      default:
-        break;
-    }
-  }
-
-  return (
-    <div className="myData">
-      <div className="settings-switch-buttons">
-        <h4 className="gold-text mt-1">{userData.user.username}'s Settings</h4>
-        <button
-          onClick={() => {
-            setSelectedSetting("Account Preference");
-            setSelectedTab("Account Preference");
-          }}
-          className={
-            selectedTab === "Account Preference"
-              ? "active-tab-button"
-              : "inactive-tab-button"
-          }
-        >
-          Account Preference
-        </button>
-        <button
-          onClick={() => {
-            setSelectedSetting("SignIn & Security");
-            setSelectedTab("SignIn & Security");
-          }}
-          className={
-            selectedTab === "SignIn & Security"
-              ? "active-tab-button"
-              : "inactive-tab-button"
-          }
-        >
-          SignIn & Security
-        </button>
-        <button
-          onClick={() => {
-            setSelectedSetting("Notifications");
-            setSelectedTab("Notifications");
-          }}
-          className={
-            selectedTab === "Notifications"
-              ? "active-tab-button"
-              : "inactive-tab-button"
-          }
-        >
-          Notifications
-        </button>
+  if (step == 1 && noSavings == false) {
+    return (
+      <div className="card">
+        <Savings
+          financeStep={step}
+          setFinanceStep={setStep}
+          noSavings={noSavings}
+          setNoSavings={setNoSavings}
+        />
       </div>
-      <div className="profile-information">{renderSettings()}</div>
+    );
+  } else if (step == 1 && noSavings == true) {
+    return (
+      <div className="card">
+        <NoSavings financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
+  } else if (step == 2 && debt == false) {
+    return (
+      <div className="card">
+        <Debt
+          financeStep={step}
+          setFinanceStep={setStep}
+          debt={debt}
+          setDebt={setDebt}
+        />
+      </div>
+    );
+  } else if (step == 2 && debt == true) {
+    return (
+      <div className="card">
+        <PayOffDebt financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
+  } else if (step == 3 && retirement == true) {
+    return (
+      <div className="card">
+        <Retirement
+          financeStep={step}
+          setFinanceStep={setStep}
+          retirement={retirement}
+          setRetirement={setRetirement}
+        />
+      </div>
+    );
+  } else if (step == 3 && retirement == false) {
+    return (
+      <div className="card">
+        <RetirementContributions financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
+  } else if (step == 4 && healthSavings == true) {
+    return (
+      <div className="card">
+        <HealthSavings
+          financeStep={step}
+          setFinanceStep={setStep}
+          healthSavings={healthSavings}
+          setHealthSavings={setHealthSavings}
+        />
+      </div>
+    );
+  } else if (step == 4 && healthSavings == false) {
+    return (
+      <div className="card">
+        <HealthSavingsContributions
+          financeStep={step}
+          setFinanceStep={setStep}
+        />
+      </div>
+    );
+  } else if (step == 5) {
+    return (
+      <div className="card">
+        <RothIra financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
+  } else if (step == 6) {
+    return (
+      <div className="card">
+        <OptionalInvestments financeStep={step} setFinanceStep={setStep} />
+      </div>
+    );
+  }
+  return (
+    <div className="card">
+      <EmploymentStatus financeStep={step} setFinanceStep={setStep} />
     </div>
   );
 }
 
-export default MySettings;
+export default Home;

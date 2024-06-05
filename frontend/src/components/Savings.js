@@ -1,14 +1,15 @@
 import React from "react";
 
-function Savings({ financeStep, setFinanceStep, noSavings, setNoSavings }) {
+function Savings({ pageToShow, setPageToShow }) {
   const yesHandleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("debt");
   };
   const noHandleClick = () => {
-    setNoSavings(true);
+    setPageToShow("no savings");
   };
+
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>
           Do you have at least 6 months worth of savings to cover expenses?
@@ -22,7 +23,7 @@ function Savings({ financeStep, setFinanceStep, noSavings, setNoSavings }) {
           No
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

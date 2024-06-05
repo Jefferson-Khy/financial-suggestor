@@ -1,19 +1,14 @@
 import React from "react";
 
-function HealthSavings({
-  financeStep,
-  setFinanceStep,
-  healthSavings,
-  setHealthSavings,
-}) {
+function HealthSavings({ pageToShow, setPageToShow }) {
   const yesHandleClick = () => {
-    setHealthSavings(false);
+    setPageToShow("has HSA");
   };
   const noHandleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("RothIra");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>Do you have an HSA?</h1>
       </div>
@@ -26,7 +21,7 @@ function HealthSavings({
           No
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

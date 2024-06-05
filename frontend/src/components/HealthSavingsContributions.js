@@ -1,11 +1,11 @@
 import React from "react";
 
-function HealthSavingsContributions({ financeStep, setFinanceStep }) {
+function HealthSavingsContributions({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("RothIra");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>
           I suggest trying to max annual contribution to HSA. It's relatively
@@ -20,7 +20,7 @@ function HealthSavingsContributions({ financeStep, setFinanceStep }) {
           I've maxed my HSA contributions
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
