@@ -1,11 +1,11 @@
 import React from "react";
 
-function RetirementContributions({ financeStep, setFinanceStep }) {
+function RetirementContributions({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("HSA");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>Contribute at LEAST employer match before moving to next step</h1>
       </div>
@@ -17,7 +17,7 @@ function RetirementContributions({ financeStep, setFinanceStep }) {
           I've contributed at LEAST up to employer match!
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

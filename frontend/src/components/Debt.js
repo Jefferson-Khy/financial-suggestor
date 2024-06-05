@@ -1,14 +1,14 @@
 import React from "react";
 
-function Debt({ financeStep, setFinanceStep, debt, setDebt }) {
+function Debt({ pageToShow, setPageToShow }) {
   const yesHandleClick = () => {
-    setDebt(true);
+    setPageToShow("has debt");
   };
   const noHandleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("401k");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>
           Do you have any short-term high-interest debt? ie. credit cards or
@@ -23,7 +23,7 @@ function Debt({ financeStep, setFinanceStep, debt, setDebt }) {
           No
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

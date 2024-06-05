@@ -1,11 +1,11 @@
 import React from "react";
 
-function RothIra({ financeStep, setFinanceStep }) {
+function RothIra({ pageToShow, setPageToShow }) {
   const handleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("optional investments");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>
           Open Roth IRA! I suggest maxing annual contrib. limits. Annual limits
@@ -21,7 +21,7 @@ function RothIra({ financeStep, setFinanceStep }) {
           steps here are more investment options for your FUTURE!!
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

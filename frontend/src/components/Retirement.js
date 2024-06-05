@@ -1,20 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function Retirement({
-  financeStep,
-  setFinanceStep,
-  retirement,
-  setRetirement,
-}) {
+function Retirement({ pageToShow, setPageToShow }) {
   const yesHandleClick = () => {
-    setRetirement(false);
+    setPageToShow("has 401k");
   };
   const noHandleClick = () => {
-    setFinanceStep(financeStep + 1);
+    setPageToShow("HSA");
   };
   return (
-    <>
+    <div className="card">
       <div className="question-container">
         <h1>Does your company offer 401k? pre-tax, after-tax, or Roth?</h1>
       </div>
@@ -26,7 +20,7 @@ function Retirement({
           No
         </button>
       </div>
-    </>
+    </div>
   );
 }
 
