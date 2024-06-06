@@ -1,5 +1,14 @@
 {
+  "name": "easy-finance-suggestions",
+  "version": "1.0.0",
+  "main": "easy-finance-server/server.js",
+  "scripts": {
+    "start": "node easy-finance-server/server.js --ignore easy-finance-client",
+    "develop": "concurrently \"cd easy-finance-server && npm run watch\" \"cd easy-finance-client && npm start\"",
+    "install": "cd easy-finance-server && npm i && cd.. && cd easy-finance-client && npm i"
+  },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "react-router-dom": "^6.23.1"
   }
 }

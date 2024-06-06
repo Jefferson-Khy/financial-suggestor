@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import EmploymentStatus from "../components/EmploymentStatus";
 import Savings from "../components/Savings";
 import NoSavings from "../components/NoSavings";
@@ -11,6 +13,7 @@ import HealthSavingsContributions from "../components/HealthSavingsContributions
 import RothIra from "../components/RothIra";
 import OptionalInvestments from "../components/OptionalInvestments";
 import "../index.css";
+import StepProgression from "../components/StepProgression";
 
 function Home() {
   const [pageToShow, setPageToShow] = useState("");
@@ -76,7 +79,16 @@ function Home() {
         );
     }
   }
-  return <>{renderComponent()}</>;
+  return (
+    <>
+      <Header />
+      <div className="content-container">
+        <StepProgression />
+        {renderComponent()}
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default Home;
