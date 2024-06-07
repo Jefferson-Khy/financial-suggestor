@@ -16,8 +16,7 @@ function PayoffDebt({ pageToShow, setPageToShow }) {
       </a>
       <div className="btn-container">
         <button type="button" onClick={handleClick}>
-          I've paid off or paid significant amount of my short term high
-          interest debt!
+          Debt Paid!
         </button>
       </div>
     </div>

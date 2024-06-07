@@ -17,7 +17,7 @@ function HealthSavingsContributions({ pageToShow, setPageToShow }) {
       </a>
       <div className="btn-container">
         <button type="button" onClick={handleClick}>
-          I've maxed my HSA contributions
+          HSA Maxed!
         </button>
       </div>
     </div>

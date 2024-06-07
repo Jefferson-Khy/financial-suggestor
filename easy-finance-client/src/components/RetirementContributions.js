@@ -14,7 +14,7 @@ function RetirementContributions({ pageToShow, setPageToShow }) {
       </a>
       <div className="btn-container">
         <button type="button" onClick={handleClick}>
-          I've contributed at LEAST up to employer match!
+          Employer Matched!
         </button>
       </div>
     </div>
