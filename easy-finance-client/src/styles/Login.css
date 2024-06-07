@@ -5,7 +5,6 @@ a {
 
 .btn-container {
   display: flex;
-  border: solid 2px green;
   margin-top: 6%;
 }
 
@@ -21,11 +20,9 @@ a {
     -50%,
     -50%
   ); /* Move the container back by half of its own width and height, w/out this, top left corner of container would be in center */
-  border: solid 2px rebeccapurple;
 }
 
 .login-form {
-  border: 2px solid red;
   width: 20vw;
   display: flex;
   flex-direction: column;
