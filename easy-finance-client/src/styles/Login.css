@@ -8,6 +8,10 @@ a {
   margin-top: 6%;
 }
 
+.btn-primary {
+  flex: 0 0 80px;
+}
+
 .form-group {
   margin: 5%;
 }

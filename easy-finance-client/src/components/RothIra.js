@@ -17,8 +17,7 @@ function RothIra({ pageToShow, setPageToShow }) {
       </a>
       <div className="btn-container">
         <button type="button" onClick={handleClick}>
-          You're basically DONE! But if you have extra income after the previous
-          steps here are more investment options for your FUTURE!!
+          Roth IRA Maxed!
         </button>
       </div>
     </div>
